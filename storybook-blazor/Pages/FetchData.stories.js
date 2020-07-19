@@ -1,3 +1,3 @@
-export default { title: 'FetchData' };
+export default { title: 'Blazor / FetchData' };
 
-export const test = () => ''
+export const Default = () => '';

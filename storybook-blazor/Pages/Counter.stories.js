@@ -1,3 +1,3 @@
-export default { title: 'Counter' };
+export default { title: 'Blazor / Counter' };
 
-export const test = () => ''
+export const Default = () => '';

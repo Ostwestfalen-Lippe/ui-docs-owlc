@@ -1,0 +1,119 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+<Meta title="General / Theme / Layout" />
+
+# Columns - 12
+
+<Story name="Columns-12" height="700px">
+ { () => `
+<style>
+#grids .col > div, #grids [class^="col-"] > div, #grids [class*=" col-"] > div, #grids .col > div, #grids [class^="w-"] > div, #grids [class*=" w-"] > div, #grids [class^="h-"] > div, #grids [class*=" h-"] > div {
+    background: #eee;
+    text-align: center;
+    border-radius: 5px;
+    font-size: .7rem;
+    text-transform: uppercase;
+    min-height: 30px !important;
+    line-height: 30px;
+    margin-bottom: .75rem;
+    font-weight: bold;
+    letter-spacing: .1rem;
+</style>
+<div id="grids">
+<div class="row">
+    <div class="col-12 uppercase">
+        <div class="uppercase">Col-12</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-11 uppercase">
+        <div class="uppercase">Col-11</div>
+    </div>
+    <div class="col-1 uppercase">
+        <div class="uppercase">Col-1</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-10 uppercase">
+        <div class="uppercase">Col-10</div>
+    </div>
+    <div class="col-2 uppercase">
+        <div class="uppercase">Col-2</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-9 uppercase">
+        <div class="uppercase">Col-9</div>
+    </div>
+    <div class="col-3 uppercase">
+        <div class="uppercase">Col-3</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-8 uppercase">
+        <div class="uppercase">Col-8</div>
+    </div>
+    <div class="col-4 uppercase">
+        <div class="uppercase">Col-4</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-7 uppercase">
+        <div class="uppercase">Col-7</div>
+    </div>
+    <div class="col-5 uppercase">
+        <div class="uppercase">Col-5</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6 uppercase">
+        <div class="uppercase">Col-6</div>
+    </div>
+    <div class="col-6 uppercase">
+        <div class="uppercase">Col-6</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 uppercase">
+        <div class="uppercase">Col-5</div>
+    </div>
+    <div class="col-7 uppercase">
+        <div class="uppercase">Col-7</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4 uppercase">
+        <div class="uppercase">Col-4</div>
+    </div>
+    <div class="col-8 uppercase">
+        <div class="uppercase">Col-8</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3 uppercase">
+        <div class="uppercase">Col-3</div>
+    </div>
+    <div class="col-9 uppercase">
+        <div class="uppercase">Col-9</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2 uppercase">
+        <div class="uppercase">Col-2</div>
+    </div>
+    <div class="col-10 uppercase">
+        <div class="uppercase">Col-10</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-1 uppercase">
+        <div class="uppercase">Col-1</div>
+    </div>
+    <div class="col-11 uppercase">
+        <div class="uppercase">Col-11</div>
+    </div>
+</div>
+</div>
+`
+}
+</Story>

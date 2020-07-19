@@ -1,0 +1,86 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+<Meta title="General / Theme / Colors" />
+
+# Introduction
+
+<Story name="Primary" height="800px">
+  {() => `
+    <style>
+.color-circle {
+    border-radius: 50%;
+    margin: .5rem;
+    padding: 1rem;
+}
+</style>
+<table class="table bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 50px">Color</th>
+                        <th>Name</th>
+                        <th>HSL</th>
+                        <th>Modifier</th>
+                        <th>CSS Variable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="color-circle bg-primary"></div></td>
+                        <td><b>Primary</b></td>
+                        <td><code>hsl(355,86,59)</code></td>
+                        <td><code>-primary</code></td>
+                        <td><code>--color-primary</code></td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-circle bg-light"></div></td>
+                        <td><b>Light</b></td>
+                        <td><code>hsl(210,50,98)</code></td>
+                        <td><code>-light</code></td>
+                        <td><code>--color-light</code></td>
+                    </tr>                   
+                    <tr>
+                        <td><div class="color-circle bg-dark"></div></td>
+                        <td><b>Dark</b></td>
+                        <td><code>hsl(0,0,21)</code></td>
+                        <td><code>-dark</code></td>
+                        <td><code>--color-dark</code></td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-circle bg-info"></div></td>
+                        <td><b>Info</b></td>
+                        <td><code>hsl(219,95,57)</code></td>
+                        <td><code>-info</code></td>
+                        <td><code>--color-info</code></td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-circle bg-link"></div></td>
+                        <td><b>Link</b></td>
+                        <td><code>hsl(241,49,57)</code></td>
+                        <td><code>-link</code></td>
+                        <td><code>--color-link</code></td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-circle bg-success"></div></td>
+                        <td><b>Success</b></td>
+                        <td><code>hsl(144,88,44)</code></td>
+                        <td><code>-success</code></td>
+                        <td><code>--color-success</code></td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-circle bg-warning"></div></td>
+                        <td><b>Warning</b></td>
+                        <td><code>hsl(39,95,59)</code></td>
+                        <td><code>-warning</code></td>
+                        <td><code>--color-warning</code></td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-circle bg-danger"></div></td>
+                        <td><b>Danger</b></td>
+                        <td><code>hsl(359,96,62)</code></td>
+                        <td><code>-danger</code></td>
+                        <td><code>--color-danger</code></td>
+                    </tr>
+                </tbody>
+            </table>
+  `}
+</Story>
