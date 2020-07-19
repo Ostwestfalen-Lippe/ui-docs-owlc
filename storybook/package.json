@@ -1,0 +1,27 @@
+{
+  "name": "storybook-blazor",
+  "version": "1.0.0",
+  "description": "This is the Style Documentation for the OWL.Cultur-Platform",
+  "main": "index.js",
+  "scripts": {
+    "buildBlazor": "dotnet publish -c Release -p:PublishReadyToRun=true -p:PublishTrimmed=true ../storybook-blazor",
+    "copyGithubFiles": "copyfiles -a --flat ./gh-pages/* ../storybook-static-gh",
+    "build-storybook": "npm run buildBlazor && build-storybook -s ../storybook-blazor/bin/Release/netstandard2.1/publish/wwwroot -o ../storybook-static",
+    "build-storybook-gh": "npm run buildBlazor && build-storybook -s ../storybook-blazor/bin/Release/netstandard2.1/publish/wwwroot -o ../storybook-static-gh && npm run copyGithubFiles",
+    "deploy-storybook": "storybook-to-ghpages --existing-output-dir=../storybook-static-gh --remote=github --branch=gh-pages",
+    "storybook": "npm run buildBlazor && start-storybook -s ../storybook-blazor/bin/Release/netstandard2.1/publish/wwwroot -p 9001",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aXon GmbH & Universität Paderborn | SI-Lab",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/html": "^5.3.19",
+    "@storybook/storybook-deployer": "^2.8.6",
+    "@storybook/theming": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "copyfiles": "^2.3.0"
+  },
+  "dependencies": {}
+}

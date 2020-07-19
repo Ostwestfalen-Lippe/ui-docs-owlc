@@ -1,0 +1,27 @@
+﻿@page "/counter"
+@page "/counter--test"
+@inject NavigationManager NavManager
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    protected override void OnInitialized()
+    {
+        var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
+        if ( Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query).TryGetValue("initialCount", out var _initialCount))
+        {
+            currentCount = Convert.ToInt32(_initialCount);
+        }
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

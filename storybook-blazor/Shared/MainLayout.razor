@@ -1,0 +1,29 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager
+
+@Body
+
+@code{
+
+    public string Id { get; set; }
+    protected override void OnInitialized()
+    {
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+        if ( Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query).TryGetValue("id", out var _id))
+        {
+            Id = Convert.ToString(_id);
+            NavigationManager.NavigateTo(Id);
+        }
+
+        JSRuntime.InvokeAsync<object>("window.exampleJsFunctions.saveObjRef", DotNetObjectReference.Create(this));
+    }
+
+    @* OnStoryChanged Listener that is evoked by storybook blazor-notifier-addon *@
+    [JSInvokable]
+    public void OnStoryChanged(string id)
+    {
+        Id = id;
+        NavigationManager.NavigateTo(Id);
+    }
+}
