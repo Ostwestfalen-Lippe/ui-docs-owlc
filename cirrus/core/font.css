@@ -1,0 +1,463 @@
+/*
+  Functions
+*/
+/*
+    Converts a given hex value to RGB.
+*/
+/* Spacing */
+/* Fonts */
+/* Grid Count */
+/* Grid Percents */
+/* Tab Sizes */
+/* Media Queries */
+/* Smaller than the defined pixels are the dimensions for that range */
+/* Color scheme for Cirrus */
+/* v2 Colors */
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700&swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&swap");
+:root {
+  /* v1 Colors */
+  --cirrus-fg: #374054;
+  --cirrus-bg: #fff;
+  --cirrus-primary: #f03d4d;
+  --cirrus-primary-rgb: 240, 61, 77;
+  --cirrus-primary-light: #ffdadd;
+  --cirrus-accent-hover: #d62939;
+  --cirrus-accent-border: #c21b2b;
+  --cirrus-light: #f6f9fc;
+  --cirrus-light-gray: #f8f9fa;
+  --cirrus-gray: #d5d7dc;
+  --cirrus-dark-gray: #909090;
+  --cirrus-dark: #363636;
+  --cirrus-link: #5e5cc7;
+  --cirrus-link-dark: #4643e2;
+  --cirrus-info: #2972fa;
+  --cirrus-success: #0dd157;
+  --cirrus-success-rgb: 13, 209, 87;
+  --cirrus-warning: #fab633;
+  --cirrus-danger: #fb4143;
+  --cirrus-light-hover: #d0e0ef;
+  --cirrus-dark-hover: #505050;
+  --cirrus-info-hover: #1062f9;
+  --cirrus-link-hover: #f8f7ff;
+  --cirrus-success-hover: #0cb94d;
+  --cirrus-warning-hover: #f9ad1a;
+  --cirrus-danger-hover: #eb0507;
+  --cirrus-select-bg: rgba(0, 161, 255, 0.2);
+  --cirrus-code-bg: var(--cirrus-primary-light);
+  --cirrus-code-fg: #dc4753;
+  --cirrus-form-group-bg: var(--cirrus-light-gray);
+  --cirrus-form-group-fg: var(--cirrus-dark-gray);
+  --toast-primary-bg: rgba(49, 59, 80, 0.9);
+  /* Self defined Colors */
+  /* Background and Foreground Colors */
+  --color-bg-h: 0;
+  --color-bg-s: 0%;
+  --color-bg-l: 100%;
+  --color-bg: hsl(var(--color-bg-h),var(--color-bg-s),var(--color-bg-l));
+  --color-fg-h: 221;
+  --color-fg-s: 21%;
+  --color-fg-l: 27%;
+  --color-fg: hsl(var(--color-fg-h),var(--color-fg-s),var(--color-fg-l));
+  /* Basic Colors */
+  --color-primary-h:355;
+  --color-primary-s:86%;
+  --color-primary-l:59%;
+  --color-primary: hsl(var(--color-primary-h),var(--color-primary-s),var(--color-primary-l));
+  --color-primary-light: hsl(var(--color-primary-h),var(--color-primary-s),calc(var(--color-primary-l) + 20%));
+  --color-light-h: 210;
+  --color-light-s: 50%;
+  --color-light-l: 98%;
+  --color-light: hsl(var(--color-light-h),var(--color-light-s),var(--color-light-l));
+  --color-light-gray: hsl(var(--color-light-h),calc(var(--color-light-s) - 33%),var(--color-light-l));
+  --color-gray-h: 223;
+  --color-gray-s: 9%;
+  --color-gray-l: 85%;
+  --color-gray: hsl(var(--color-gray-h),var(--color-gray-s),var(--color-gray-l));
+  --color-dark-h: 0;
+  --color-dark-s: 0%;
+  --color-dark-l: 21%;
+  --color-dark: hsl(var(--color-dark-h),var(--color-dark-s),var(--color-dark-l));
+  --color-dark-gray: hsl(var(--color-dark-h),var(--color-dark-s),calc(var(--color-dark-l) + 35%));
+  --color-info-h: 219;
+  --color-info-s: 95%;
+  --color-info-l: 57%;
+  --color-info: hsl(var(--color-info-h),var(--color-info-s),var(--color-info-l));
+  --color-link-h: 241;
+  --color-link-s: 49%;
+  --color-link-l: 57%;
+  --color-link: hsl(var(--color-link-h),var(--color-link-s),var(--color-link-l));
+  --color-link-dark: hsl(var(--color-link-h),calc(var(--color-link-s) + 24%),var(--color-link-l));
+  --color-success-h: 144;
+  --color-success-s: 88%;
+  --color-success-l: 44%;
+  --color-success: hsl(var(--color-success-h),var(--color-success-s),var(--color-success-l));
+  --color-warning-h: 39;
+  --color-warning-s: 95%;
+  --color-warning-l: 59%;
+  --color-warning: hsl(var(--color-warning-h),var(--color-warning-s),var(--color-warning-l));
+  --color-danger-h: 359;
+  --color-danger-s: 96%;
+  --color-danger-l: 62%;
+  --color-danger: hsl(var(--color-danger-h),var(--color-danger-s),var(--color-danger-l));
+  /* Hover Colors */
+  --color-accent-hover: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 18%),calc(var(--color-primary-l) - 8%));
+  --color-accent-border: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 10%),calc(var(--color-primary-l) - 16%));
+  --color-light-hover: hsl(var(--color-light-h),var(--color-light-s),calc(var(--color-light-l) - 10%));
+  --color-dark-hover: hsl(var(--color-dark-h),var(--color-dark-s),calc(var(--color-dark-l) + 10%));
+  --color-info-hover: hsl(var(--color-info-h:),var(--color-info-s),calc(var(--color-info-l) - 5%));
+  --color-link-hover: hsl(var(--color-link-h),var(--color-link-s),calc(var(--color-link-l) + 40%));
+  --color-success-hover: hsl(var(--color-success-h),var(--color-success-s),calc(var(--color-success-l) - 5%));
+  --color-warning-hover: hsl(var(--color-warning-h),var(--color-warning-s),calc(var(--color-warning-l)- 5%));
+  --color-danger-hover: hsl(var(--color-danger-h),var(--color-danger-s),calc(var(--color-danger-l) - 15%));
+  /*  Additional Colors */
+  --color-select-bg: hsla(202,101%,50%,20%);
+  --color-code-bg: var(--color-primary-light);
+  --color-code-fg: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 20%),var(--color-primary-l));
+  --color-form-group-bg: var(--color-light-gray);
+  --color-form-group-fg: var(--color-dark-gray);
+  --toast-primary-bg: hsla(var(--color-fg-h),var(--color-fg-s),var(--color-fg-l),90%);
+  --animation-duration: 0.2s;
+  --focus-opacity: 0.55;
+  --space-size: 0.5rem;
+  --font-size-xs: 0.7rem;
+  --font-size-s: 0.85rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.35rem;
+  --font-size-xl: 1.75rem;
+}
+
+/* FONT */
+/* Constants */
+/* Headers */
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h5 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* Silent header Deprecated 0.5.6
+h1 .silent,
+h2 .silent,
+h3 .silent,
+h4 .silent,
+h5 .silent,
+h6 .silent {
+  color: #788196;
+} */
+h1 {
+  letter-spacing: 0.025rem;
+}
+
+p,
+article,
+blockquote {
+  font-size: 1rem;
+  line-height: 2;
+  margin-bottom: 1rem;
+}
+
+p.lead {
+  font-size: 1.2rem;
+}
+
+blockquote {
+  background-color: #f8f9fa;
+  border-left: 5px solid #e9ecef;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+}
+blockquote.text--large {
+  font-size: 1.15rem;
+}
+blockquote p {
+  margin: 0;
+}
+
+cite {
+  opacity: 0.7;
+}
+
+mark,
+.mark {
+  padding: 0.2em;
+  background-color: #f0e8c4;
+}
+
+/* Headlines (for larger titles) */
+.headline-1 {
+  font-size: 8.5rem;
+  letter-spacing: 0.05rem;
+}
+
+.headline-2 {
+  font-size: 7.5rem;
+  letter-spacing: 0.05rem;
+}
+
+.headline-3 {
+  font-size: 6.5rem;
+  letter-spacing: 0.05rem;
+}
+
+.headline-4 {
+  font-size: 5.5rem;
+  letter-spacing: 0.05rem;
+}
+
+/* Deprecated, use font-bold */
+.font-alt {
+  font-family: "Nunito Sans";
+}
+
+.content h1 {
+  line-height: 1.125em;
+  margin: 1rem 0;
+}
+.content h2 {
+  line-height: 1.125em;
+  margin: 1rem 0;
+}
+.content h3 {
+  line-height: 1.125em;
+  margin: 1rem 0;
+}
+.content h4 {
+  line-height: 1.125em;
+  margin: 1rem 0;
+}
+.content h5 {
+  line-height: 1.125em;
+  margin: 1rem 0;
+}
+.content h6 {
+  line-height: 1.125em;
+  margin: 1rem 0;
+}
+
+/* TODO: To deprecate */
+.title {
+  font-weight: bold;
+}
+
+.title:not(:last-child),
+.subtitle:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.title + .subtitle {
+  /* Make the subtitlte closer to the title */
+  margin-top: -0.75rem;
+}
+
+/* Use default line-height for these texts and when line-height-inherit is specified */
+.card-tile p,
+.card-tile article,
+.card-tile blockquote {
+  line-height: inherit;
+}
+
+/* Weights */
+.font-thin {
+  font-weight: 200;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Text Transformations */
+.uppercase {
+  text-transform: "uppercase";
+}
+
+.lowercase {
+  text-transform: "lowercase";
+}
+
+.capitalize {
+  text-transform: "capitalize";
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.white {
+  color: #fff !important;
+}
+
+.faded {
+  opacity: 0.75;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+/* Font Awesome */
+.icon {
+  /* Usually used in spans */
+  display: inline-block;
+  /* font-size: 21px; Allow font sizes for icons to be overwritten */
+  /* line-height: 1.5rem; Allow line height to be inherited or overwritten */
+  text-align: center;
+  width: 1.5rem;
+  vertical-align: baseline;
+}
+.icon.x-small {
+  margin: 0.55rem 0 0 0.1rem;
+}
+.icon.small {
+  margin: 0.95rem 0 0 0.1rem;
+}
+.icon .fa-wrapper {
+  font-size: inherit;
+}
+
+.info {
+  display: block;
+  font-size: var(--font-size-s);
+  margin-top: 0.25rem;
+  color: #868e96;
+}
+.info.inline {
+  /* Keeps the extra info inline */
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid\9 ;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+/* Other text elements */
+abbr[title] {
+  border-bottom: 0.1rem dotted;
+  cursor: help;
+  text-decoration: none;
+}
+
+kbd {
+  background-color: var(--color-fg);
+  border-radius: 0.2rem;
+  color: #fff;
+  display: inline-block;
+  line-height: 1;
+  padding: 0.5rem;
+  vertical-align: baseline;
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  .headline-1 {
+    font-size: 3.75rem;
+  }
+
+  .headline-2 {
+    font-size: 3.5rem;
+  }
+
+  .headline-3 {
+    font-size: 3.25rem;
+  }
+
+  .headline-4 {
+    font-size: 3rem;
+  }
+
+  p,
+article,
+blockquote {
+    margin: 1rem 0;
+  }
+}
+
+/*# sourceMappingURL=font.css.map */

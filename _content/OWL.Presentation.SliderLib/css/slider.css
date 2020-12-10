@@ -1,0 +1,96 @@
+/* 
+  This is Carousel Slider
+*/
+
+.slider-component {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slider-component > .slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--color-primary) transparent;
+}
+
+.slider-component > .slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slider-component > .slides::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+.slider-component > .slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.slider-component > .slides > div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  margin-right: 2em;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-component .slider-counter {
+  text-align:center;
+  position:absolute;
+  bottom:20px;
+  width:100%;
+}
+
+.slider-component .slider-counter > label {
+  font-size: 1.5em;
+  color: var(--color-primary);
+  text-shadow: 0 0 1px black;
+}
+
+.slider-component > .prev-nav,
+.slider-component > .next-nav {
+  position: absolute;
+  top: 0;
+  width: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.slider-component > .prev-nav {
+  left: 0;
+}
+
+.slider-component > .next-nav {
+  right: 0;
+}
+
+.slider-component > .prev-nav > a,
+.slider-component > .next-nav > a {
+  position: absolute;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 6em;
+  text-align: center;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* @supports (-webkit-touch-callout: none) {
+  .slider-component > .prev-nav,
+  .slider-component > .next-nav {
+    visibility: collapse;
+  }
+} */

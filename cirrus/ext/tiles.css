@@ -1,0 +1,51 @@
+/* TILES */
+.tile {
+  display: flex;
+  display: -ms-flexbox;
+  align-content: space-between;
+  /* Ensure space between child elements of card tile */
+  -webkit-align-content: space-between;
+  /* align-items: flex-start; Push elements to the top of container instead of center/bottom (removed since unneeded */
+  -ms-flex-line-pack: justify;
+  /* Evenly distribute lines */
+  /* Override the default behavior where buttons display as blocks */
+  /* Add spacing between the elements in between */
+}
+.tile p {
+  font-size: 0.95rem;
+  /* Base font size is 1rem */
+}
+.tile .tile__icon,
+.tile .tile__buttons {
+  flex: 0 0 auto;
+}
+.tile .tile__buttons button,
+.tile .tile__buttons .btn,
+.tile .tile__buttons [type=submit] {
+  display: inline-block;
+  margin: 0.1rem;
+  /* Reduce space used by buttons, default .5rem */
+}
+.tile .tile__container {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+}
+.tile .tile__container:not(:first-child) {
+  padding-left: 1rem;
+}
+.tile .tile__container:not(:last-child) {
+  padding-right: 1rem;
+}
+.tile .tile__title {
+  line-height: 2rem;
+  font-weight: bolder;
+  margin: 0.1rem auto;
+}
+.tile .tile__subtitle {
+  line-height: 1.25rem;
+  opacity: 0.7;
+  margin: 0.1rem auto;
+}
+
+/*# sourceMappingURL=tiles.css.map */

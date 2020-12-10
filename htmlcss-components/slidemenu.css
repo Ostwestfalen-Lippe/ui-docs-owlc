@@ -1,0 +1,72 @@
+/* Based on https://codepen.io/Shven/pen/chKqD/*/
+#wrapper-slidemenu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Fix because of Cirrus CSS */
+#wrapper-slidemenu label:first-child:not(:last-child):not(.form-group-label) {
+  margin-right: 0rem;
+}
+
+.slidemenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: hsla(
+    var(--color-bg-h),
+    var(--color-bg-s),
+    var(--color-bg-l),
+    0.7
+  );
+  width: 20rem;
+  height: 100%;
+  transform: translate3d(-20rem, 0, 0);
+  transition: transform 0.35s;
+}
+
+.slidemenu .slidemenu {
+  background: var(--color-bg);
+}
+
+.slidemenu-label {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: -3rem;
+  width: 3rem;
+  height: 3.6rem;
+  cursor: pointer;
+}
+
+input[name="slidemenu"] + .slidemenu #slidemenuToggleLabel:before {
+  position: absolute;
+  font-family: "Font Awesome\ 5 Free";
+  background-color: hsla(
+    var(--color-bg-h),
+    var(--color-bg-s),
+    var(--color-bg-l),
+    0.7
+  );
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  content: "\f0b0";
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+input[name="slidemenu"]:checked + .slidemenu #slidemenuToggleLabel:before {
+  content: "\f00d";
+}
+
+/* fade in checked menu */
+.slidemenu-checkbox:checked + .slidemenu {
+  transform: translate3d(0, 0, 0);
+}

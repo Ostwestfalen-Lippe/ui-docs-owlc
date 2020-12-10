@@ -1,0 +1,844 @@
+/*
+  Functions
+*/
+/*
+    Converts a given hex value to RGB.
+*/
+/* Spacing */
+/* Fonts */
+/* Grid Count */
+/* Grid Percents */
+/* Tab Sizes */
+/* Media Queries */
+/* Smaller than the defined pixels are the dimensions for that range */
+/* Color scheme for Cirrus */
+/* v2 Colors */
+:root {
+  /* v1 Colors */
+  --cirrus-fg: #374054;
+  --cirrus-bg: #fff;
+  --cirrus-primary: #f03d4d;
+  --cirrus-primary-rgb: 240, 61, 77;
+  --cirrus-primary-light: #ffdadd;
+  --cirrus-accent-hover: #d62939;
+  --cirrus-accent-border: #c21b2b;
+  --cirrus-light: #f6f9fc;
+  --cirrus-light-gray: #f8f9fa;
+  --cirrus-gray: #d5d7dc;
+  --cirrus-dark-gray: #909090;
+  --cirrus-dark: #363636;
+  --cirrus-link: #5e5cc7;
+  --cirrus-link-dark: #4643e2;
+  --cirrus-info: #2972fa;
+  --cirrus-success: #0dd157;
+  --cirrus-success-rgb: 13, 209, 87;
+  --cirrus-warning: #fab633;
+  --cirrus-danger: #fb4143;
+  --cirrus-light-hover: #d0e0ef;
+  --cirrus-dark-hover: #505050;
+  --cirrus-info-hover: #1062f9;
+  --cirrus-link-hover: #f8f7ff;
+  --cirrus-success-hover: #0cb94d;
+  --cirrus-warning-hover: #f9ad1a;
+  --cirrus-danger-hover: #eb0507;
+  --cirrus-select-bg: rgba(0, 161, 255, 0.2);
+  --cirrus-code-bg: var(--cirrus-primary-light);
+  --cirrus-code-fg: #dc4753;
+  --cirrus-form-group-bg: var(--cirrus-light-gray);
+  --cirrus-form-group-fg: var(--cirrus-dark-gray);
+  --toast-primary-bg: rgba(49, 59, 80, 0.9);
+  /* Self defined Colors */
+  /* Background and Foreground Colors */
+  --color-bg-h: 0;
+  --color-bg-s: 0%;
+  --color-bg-l: 100%;
+  --color-bg: hsl(var(--color-bg-h),var(--color-bg-s),var(--color-bg-l));
+  --color-fg-h: 221;
+  --color-fg-s: 21%;
+  --color-fg-l: 27%;
+  --color-fg: hsl(var(--color-fg-h),var(--color-fg-s),var(--color-fg-l));
+  /* Basic Colors */
+  --color-primary-h:355;
+  --color-primary-s:86%;
+  --color-primary-l:59%;
+  --color-primary: hsl(var(--color-primary-h),var(--color-primary-s),var(--color-primary-l));
+  --color-primary-light: hsl(var(--color-primary-h),var(--color-primary-s),calc(var(--color-primary-l) + 20%));
+  --color-light-h: 210;
+  --color-light-s: 50%;
+  --color-light-l: 98%;
+  --color-light: hsl(var(--color-light-h),var(--color-light-s),var(--color-light-l));
+  --color-light-gray: hsl(var(--color-light-h),calc(var(--color-light-s) - 33%),var(--color-light-l));
+  --color-gray-h: 223;
+  --color-gray-s: 9%;
+  --color-gray-l: 85%;
+  --color-gray: hsl(var(--color-gray-h),var(--color-gray-s),var(--color-gray-l));
+  --color-dark-h: 0;
+  --color-dark-s: 0%;
+  --color-dark-l: 21%;
+  --color-dark: hsl(var(--color-dark-h),var(--color-dark-s),var(--color-dark-l));
+  --color-dark-gray: hsl(var(--color-dark-h),var(--color-dark-s),calc(var(--color-dark-l) + 35%));
+  --color-info-h: 219;
+  --color-info-s: 95%;
+  --color-info-l: 57%;
+  --color-info: hsl(var(--color-info-h),var(--color-info-s),var(--color-info-l));
+  --color-link-h: 241;
+  --color-link-s: 49%;
+  --color-link-l: 57%;
+  --color-link: hsl(var(--color-link-h),var(--color-link-s),var(--color-link-l));
+  --color-link-dark: hsl(var(--color-link-h),calc(var(--color-link-s) + 24%),var(--color-link-l));
+  --color-success-h: 144;
+  --color-success-s: 88%;
+  --color-success-l: 44%;
+  --color-success: hsl(var(--color-success-h),var(--color-success-s),var(--color-success-l));
+  --color-warning-h: 39;
+  --color-warning-s: 95%;
+  --color-warning-l: 59%;
+  --color-warning: hsl(var(--color-warning-h),var(--color-warning-s),var(--color-warning-l));
+  --color-danger-h: 359;
+  --color-danger-s: 96%;
+  --color-danger-l: 62%;
+  --color-danger: hsl(var(--color-danger-h),var(--color-danger-s),var(--color-danger-l));
+  /* Hover Colors */
+  --color-accent-hover: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 18%),calc(var(--color-primary-l) - 8%));
+  --color-accent-border: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 10%),calc(var(--color-primary-l) - 16%));
+  --color-light-hover: hsl(var(--color-light-h),var(--color-light-s),calc(var(--color-light-l) - 10%));
+  --color-dark-hover: hsl(var(--color-dark-h),var(--color-dark-s),calc(var(--color-dark-l) + 10%));
+  --color-info-hover: hsl(var(--color-info-h:),var(--color-info-s),calc(var(--color-info-l) - 5%));
+  --color-link-hover: hsl(var(--color-link-h),var(--color-link-s),calc(var(--color-link-l) + 40%));
+  --color-success-hover: hsl(var(--color-success-h),var(--color-success-s),calc(var(--color-success-l) - 5%));
+  --color-warning-hover: hsl(var(--color-warning-h),var(--color-warning-s),calc(var(--color-warning-l)- 5%));
+  --color-danger-hover: hsl(var(--color-danger-h),var(--color-danger-s),calc(var(--color-danger-l) - 15%));
+  /*  Additional Colors */
+  --color-select-bg: hsla(202,101%,50%,20%);
+  --color-code-bg: var(--color-primary-light);
+  --color-code-fg: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 20%),var(--color-primary-l));
+  --color-form-group-bg: var(--color-light-gray);
+  --color-form-group-fg: var(--color-dark-gray);
+  --toast-primary-bg: hsla(var(--color-fg-h),var(--color-fg-s),var(--color-fg-l),90%);
+  --animation-duration: 0.2s;
+  --focus-opacity: 0.55;
+  --space-size: 0.5rem;
+  --font-size-xs: 0.7rem;
+  --font-size-s: 0.85rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.35rem;
+  --font-size-xl: 1.75rem;
+}
+
+/*
+  Functions
+*/
+/*
+    Converts a given hex value to RGB.
+*/
+/* Spacing */
+/* Fonts */
+/* Grid Count */
+/* Grid Percents */
+/* Tab Sizes */
+/* Media Queries */
+/* Smaller than the defined pixels are the dimensions for that range */
+/* Color scheme for Cirrus */
+/* v2 Colors */
+:root {
+  /* v1 Colors */
+  --cirrus-fg: #374054;
+  --cirrus-bg: #fff;
+  --cirrus-primary: #f03d4d;
+  --cirrus-primary-rgb: 240, 61, 77;
+  --cirrus-primary-light: #ffdadd;
+  --cirrus-accent-hover: #d62939;
+  --cirrus-accent-border: #c21b2b;
+  --cirrus-light: #f6f9fc;
+  --cirrus-light-gray: #f8f9fa;
+  --cirrus-gray: #d5d7dc;
+  --cirrus-dark-gray: #909090;
+  --cirrus-dark: #363636;
+  --cirrus-link: #5e5cc7;
+  --cirrus-link-dark: #4643e2;
+  --cirrus-info: #2972fa;
+  --cirrus-success: #0dd157;
+  --cirrus-success-rgb: 13, 209, 87;
+  --cirrus-warning: #fab633;
+  --cirrus-danger: #fb4143;
+  --cirrus-light-hover: #d0e0ef;
+  --cirrus-dark-hover: #505050;
+  --cirrus-info-hover: #1062f9;
+  --cirrus-link-hover: #f8f7ff;
+  --cirrus-success-hover: #0cb94d;
+  --cirrus-warning-hover: #f9ad1a;
+  --cirrus-danger-hover: #eb0507;
+  --cirrus-select-bg: rgba(0, 161, 255, 0.2);
+  --cirrus-code-bg: var(--cirrus-primary-light);
+  --cirrus-code-fg: #dc4753;
+  --cirrus-form-group-bg: var(--cirrus-light-gray);
+  --cirrus-form-group-fg: var(--cirrus-dark-gray);
+  --toast-primary-bg: rgba(49, 59, 80, 0.9);
+  /* Self defined Colors */
+  /* Background and Foreground Colors */
+  --color-bg-h: 0;
+  --color-bg-s: 0%;
+  --color-bg-l: 100%;
+  --color-bg: hsl(var(--color-bg-h),var(--color-bg-s),var(--color-bg-l));
+  --color-fg-h: 221;
+  --color-fg-s: 21%;
+  --color-fg-l: 27%;
+  --color-fg: hsl(var(--color-fg-h),var(--color-fg-s),var(--color-fg-l));
+  /* Basic Colors */
+  --color-primary-h:355;
+  --color-primary-s:86%;
+  --color-primary-l:59%;
+  --color-primary: hsl(var(--color-primary-h),var(--color-primary-s),var(--color-primary-l));
+  --color-primary-light: hsl(var(--color-primary-h),var(--color-primary-s),calc(var(--color-primary-l) + 20%));
+  --color-light-h: 210;
+  --color-light-s: 50%;
+  --color-light-l: 98%;
+  --color-light: hsl(var(--color-light-h),var(--color-light-s),var(--color-light-l));
+  --color-light-gray: hsl(var(--color-light-h),calc(var(--color-light-s) - 33%),var(--color-light-l));
+  --color-gray-h: 223;
+  --color-gray-s: 9%;
+  --color-gray-l: 85%;
+  --color-gray: hsl(var(--color-gray-h),var(--color-gray-s),var(--color-gray-l));
+  --color-dark-h: 0;
+  --color-dark-s: 0%;
+  --color-dark-l: 21%;
+  --color-dark: hsl(var(--color-dark-h),var(--color-dark-s),var(--color-dark-l));
+  --color-dark-gray: hsl(var(--color-dark-h),var(--color-dark-s),calc(var(--color-dark-l) + 35%));
+  --color-info-h: 219;
+  --color-info-s: 95%;
+  --color-info-l: 57%;
+  --color-info: hsl(var(--color-info-h),var(--color-info-s),var(--color-info-l));
+  --color-link-h: 241;
+  --color-link-s: 49%;
+  --color-link-l: 57%;
+  --color-link: hsl(var(--color-link-h),var(--color-link-s),var(--color-link-l));
+  --color-link-dark: hsl(var(--color-link-h),calc(var(--color-link-s) + 24%),var(--color-link-l));
+  --color-success-h: 144;
+  --color-success-s: 88%;
+  --color-success-l: 44%;
+  --color-success: hsl(var(--color-success-h),var(--color-success-s),var(--color-success-l));
+  --color-warning-h: 39;
+  --color-warning-s: 95%;
+  --color-warning-l: 59%;
+  --color-warning: hsl(var(--color-warning-h),var(--color-warning-s),var(--color-warning-l));
+  --color-danger-h: 359;
+  --color-danger-s: 96%;
+  --color-danger-l: 62%;
+  --color-danger: hsl(var(--color-danger-h),var(--color-danger-s),var(--color-danger-l));
+  /* Hover Colors */
+  --color-accent-hover: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 18%),calc(var(--color-primary-l) - 8%));
+  --color-accent-border: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 10%),calc(var(--color-primary-l) - 16%));
+  --color-light-hover: hsl(var(--color-light-h),var(--color-light-s),calc(var(--color-light-l) - 10%));
+  --color-dark-hover: hsl(var(--color-dark-h),var(--color-dark-s),calc(var(--color-dark-l) + 10%));
+  --color-info-hover: hsl(var(--color-info-h:),var(--color-info-s),calc(var(--color-info-l) - 5%));
+  --color-link-hover: hsl(var(--color-link-h),var(--color-link-s),calc(var(--color-link-l) + 40%));
+  --color-success-hover: hsl(var(--color-success-h),var(--color-success-s),calc(var(--color-success-l) - 5%));
+  --color-warning-hover: hsl(var(--color-warning-h),var(--color-warning-s),calc(var(--color-warning-l)- 5%));
+  --color-danger-hover: hsl(var(--color-danger-h),var(--color-danger-s),calc(var(--color-danger-l) - 15%));
+  /*  Additional Colors */
+  --color-select-bg: hsla(202,101%,50%,20%);
+  --color-code-bg: var(--color-primary-light);
+  --color-code-fg: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 20%),var(--color-primary-l));
+  --color-form-group-bg: var(--color-light-gray);
+  --color-form-group-fg: var(--color-dark-gray);
+  --toast-primary-bg: hsla(var(--color-fg-h),var(--color-fg-s),var(--color-fg-l),90%);
+  --animation-duration: 0.2s;
+  --focus-opacity: 0.55;
+  --space-size: 0.5rem;
+  --font-size-xs: 0.7rem;
+  --font-size-s: 0.85rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.35rem;
+  --font-size-xl: 1.75rem;
+}
+
+/*
+    Global Mixins
+*/
+/* FORMS */
+/*
+    Mixins
+*/
+/*
+    Styles
+*/
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]),
+select {
+  width: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 3px;
+  font-family: "Nunito Sans";
+  font-size: var(--font-size-m);
+  letter-spacing: 0.02rem;
+  transition: all 0.3s;
+  outline: none;
+  padding: 0.85rem 1.1rem;
+  z-index: 1;
+  /* Input Field Sizes */
+  /* Hold Font Awesome glyphs inside input fields */
+  /* More sizes coming soon */
+  /* Search field */
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-xsmall,
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]) select.input-xsmall,
+select.input-xsmall,
+select select.input-xsmall {
+  font-size: var(--font-size-xs);
+  padding: 0.35rem 0.9rem;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-small,
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]) select.input-small,
+select.input-small,
+select select.input-small {
+  font-size: var(--font-size-s);
+  padding: 0.55rem 1rem;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-large,
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]) select.input-large,
+select.input-large,
+select select.input-large {
+  font-size: var(--font-size-l);
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-xlarge,
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]) select.input-xlarge,
+select.input-xlarge,
+select select.input-xlarge {
+  font-size: var(--font-size-xl);
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-left,
+select.input-contains-icon,
+select.input-contains-icon-left {
+  padding-left: 2.75rem;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-right,
+select.input-contains-icon-right {
+  padding-right: 2.75rem;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon.input-xsmall, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-right.input-xsmall,
+select.input-contains-icon.input-xsmall,
+select.input-contains-icon-right.input-xsmall {
+  padding-left: 2rem;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon.input-xsmall ~ .icon, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-left.input-xsmall ~ .icon, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-right.input-xsmall ~ .icon.icon-right,
+select.input-contains-icon.input-xsmall ~ .icon,
+select.input-contains-icon-left.input-xsmall ~ .icon,
+select.input-contains-icon-right.input-xsmall ~ .icon.icon-right {
+  line-height: 1.75rem;
+  width: 1.75rem;
+  font-size: 7px;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon.input-small, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-right.input-small,
+select.input-contains-icon.input-small,
+select.input-contains-icon-right.input-small {
+  padding-left: 2.5rem;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon.input-small ~ .icon, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-left.input-small ~ .icon, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-right.input-small ~ .icon.icon-right,
+select.input-contains-icon.input-small ~ .icon,
+select.input-contains-icon-left.input-small ~ .icon,
+select.input-contains-icon-right.input-small ~ .icon.icon-right {
+  width: 2.5rem;
+  font-size: 14px;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon.input-large, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-right.input-large,
+select.input-contains-icon.input-large,
+select.input-contains-icon-right.input-large {
+  padding-left: 3.5rem;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon.input-large ~ .icon, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-left.input-large ~ .icon, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-right.input-large ~ .icon.icon-right,
+select.input-contains-icon.input-large ~ .icon,
+select.input-contains-icon-left.input-large ~ .icon,
+select.input-contains-icon-right.input-large ~ .icon.icon-right {
+  line-height: 3.5rem;
+  width: 3.5rem;
+  font-size: 28px;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon.input-xlarge, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-right.input-xlarge,
+select.input-contains-icon.input-xlarge,
+select.input-contains-icon-right.input-xlarge {
+  padding-left: 4rem;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon.input-xlarge ~ .icon, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-left.input-xlarge ~ .icon, input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-contains-icon-right.input-xlarge ~ .icon.icon-right,
+select.input-contains-icon.input-xlarge ~ .icon,
+select.input-contains-icon-left.input-xlarge ~ .icon,
+select.input-contains-icon-right.input-xlarge ~ .icon.icon-right {
+  line-height: 2.5rem;
+  width: 3.75rem;
+  font-size: 35px;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range])[type=search], input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).search,
+select[type=search],
+select.search {
+  background-repeat: no-repeat;
+  background-position: left 0.6rem center;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path opacity="0.45" d="M14.891,14.39l-0.5.5a0.355,0.355,0,0,1-.5,0L9.526,10.529a5.3,5.3,0,1,1,2.106-4.212,5.268,5.268,0,0,1-1.1,3.21l4.362,4.362A0.354,0.354,0,0,1,14.891,14.39ZM6.316,2.418a3.9,3.9,0,1,0,3.9,3.9A3.9,3.9,0,0,0,6.316,2.418Z"/></svg>');
+  /* NEEDS FIXING */
+  padding-left: 2rem !important;
+  -webkit-appearance: none;
+  /* Fix Safari issue */
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range])[type=color],
+select[type=color] {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  transition: 0.3s;
+  outline: 0;
+  position: relative;
+  height: 3rem;
+  background-color: #fff;
+  padding: 0.55rem 0.8rem !important;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-success,
+select.input-success {
+  border-color: var(--cirrus-success);
+  background-color: rgba(0, 224, 0, 0.05) !important;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-success:focus,
+select.input-success:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 209, 87, 0.55), inset 0px 1px 8px rgba(0, 0, 0, 0.07);
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-error,
+select.input-error {
+  border-color: var(--cirrus-danger);
+  background-color: rgba(244, 67, 54, 0.05) !important;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]).input-error:focus,
+select.input-error:focus {
+  box-shadow: 0 0 0 0.2rem rgba(251, 65, 67, 0.55), inset 0px 1px 8px rgba(0, 0, 0, 0.07);
+}
+
+textarea,
+textarea[type=text] {
+  width: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 3px;
+  font-family: "Nunito Sans";
+  font-size: var(--font-size-m);
+  letter-spacing: 0.02rem;
+  transition: all 0.3s;
+  outline: none;
+  padding: 0.85rem 1.1rem;
+  z-index: 1;
+  /* Input Field Sizes */
+  /* Hold Font Awesome glyphs inside input fields */
+  /* More sizes coming soon */
+  margin: 0.5rem 0;
+  padding: 1rem 1.3rem;
+  min-height: 8rem;
+  line-height: 1.5rem;
+  resize: vertical;
+}
+textarea.input-xsmall,
+textarea select.input-xsmall,
+textarea[type=text].input-xsmall,
+textarea[type=text] select.input-xsmall {
+  font-size: var(--font-size-xs);
+  padding: 0.35rem 0.9rem;
+}
+textarea.input-small,
+textarea select.input-small,
+textarea[type=text].input-small,
+textarea[type=text] select.input-small {
+  font-size: var(--font-size-s);
+  padding: 0.55rem 1rem;
+}
+textarea.input-large,
+textarea select.input-large,
+textarea[type=text].input-large,
+textarea[type=text] select.input-large {
+  font-size: var(--font-size-l);
+}
+textarea.input-xlarge,
+textarea select.input-xlarge,
+textarea[type=text].input-xlarge,
+textarea[type=text] select.input-xlarge {
+  font-size: var(--font-size-xl);
+}
+textarea.input-contains-icon, textarea.input-contains-icon-left,
+textarea[type=text].input-contains-icon,
+textarea[type=text].input-contains-icon-left {
+  padding-left: 2.75rem;
+}
+textarea.input-contains-icon-right,
+textarea[type=text].input-contains-icon-right {
+  padding-right: 2.75rem;
+}
+textarea.input-contains-icon.input-xsmall, textarea.input-contains-icon-right.input-xsmall,
+textarea[type=text].input-contains-icon.input-xsmall,
+textarea[type=text].input-contains-icon-right.input-xsmall {
+  padding-left: 2rem;
+}
+textarea.input-contains-icon.input-xsmall ~ .icon, textarea.input-contains-icon-left.input-xsmall ~ .icon, textarea.input-contains-icon-right.input-xsmall ~ .icon.icon-right,
+textarea[type=text].input-contains-icon.input-xsmall ~ .icon,
+textarea[type=text].input-contains-icon-left.input-xsmall ~ .icon,
+textarea[type=text].input-contains-icon-right.input-xsmall ~ .icon.icon-right {
+  line-height: 1.75rem;
+  width: 1.75rem;
+  font-size: 7px;
+}
+textarea.input-contains-icon.input-small, textarea.input-contains-icon-right.input-small,
+textarea[type=text].input-contains-icon.input-small,
+textarea[type=text].input-contains-icon-right.input-small {
+  padding-left: 2.5rem;
+}
+textarea.input-contains-icon.input-small ~ .icon, textarea.input-contains-icon-left.input-small ~ .icon, textarea.input-contains-icon-right.input-small ~ .icon.icon-right,
+textarea[type=text].input-contains-icon.input-small ~ .icon,
+textarea[type=text].input-contains-icon-left.input-small ~ .icon,
+textarea[type=text].input-contains-icon-right.input-small ~ .icon.icon-right {
+  width: 2.5rem;
+  font-size: 14px;
+}
+textarea.input-contains-icon.input-large, textarea.input-contains-icon-right.input-large,
+textarea[type=text].input-contains-icon.input-large,
+textarea[type=text].input-contains-icon-right.input-large {
+  padding-left: 3.5rem;
+}
+textarea.input-contains-icon.input-large ~ .icon, textarea.input-contains-icon-left.input-large ~ .icon, textarea.input-contains-icon-right.input-large ~ .icon.icon-right,
+textarea[type=text].input-contains-icon.input-large ~ .icon,
+textarea[type=text].input-contains-icon-left.input-large ~ .icon,
+textarea[type=text].input-contains-icon-right.input-large ~ .icon.icon-right {
+  line-height: 3.5rem;
+  width: 3.5rem;
+  font-size: 28px;
+}
+textarea.input-contains-icon.input-xlarge, textarea.input-contains-icon-right.input-xlarge,
+textarea[type=text].input-contains-icon.input-xlarge,
+textarea[type=text].input-contains-icon-right.input-xlarge {
+  padding-left: 4rem;
+}
+textarea.input-contains-icon.input-xlarge ~ .icon, textarea.input-contains-icon-left.input-xlarge ~ .icon, textarea.input-contains-icon-right.input-xlarge ~ .icon.icon-right,
+textarea[type=text].input-contains-icon.input-xlarge ~ .icon,
+textarea[type=text].input-contains-icon-left.input-xlarge ~ .icon,
+textarea[type=text].input-contains-icon-right.input-xlarge ~ .icon.icon-right {
+  line-height: 2.5rem;
+  width: 3.75rem;
+  font-size: 35px;
+}
+
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]):focus,
+select:focus,
+textarea:focus,
+textarea[type=text]:focus,
+input[type=text].input-focused,
+.input-focused {
+  border-color: #3dabf0;
+  box-shadow: 0 0 0 0.2rem rgba(61, 171, 240, 0.45), inset 0px 1px 8px rgba(0, 0, 0, 0.07);
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]):focus.input-success,
+select:focus.input-success,
+textarea:focus.input-success,
+textarea[type=text]:focus.input-success,
+input[type=text].input-focused.input-success,
+.input-focused.input-success {
+  border-color: var(--cirrus-success);
+  background-color: rgba(0, 224, 0, 0.05) !important;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]):focus.input-success:focus,
+select:focus.input-success:focus,
+textarea:focus.input-success:focus,
+textarea[type=text]:focus.input-success:focus,
+input[type=text].input-focused.input-success:focus,
+.input-focused.input-success:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 209, 87, 0.55), inset 0px 1px 8px rgba(0, 0, 0, 0.07);
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]):focus.input-error,
+select:focus.input-error,
+textarea:focus.input-error,
+textarea[type=text]:focus.input-error,
+input[type=text].input-focused.input-error,
+.input-focused.input-error {
+  border-color: var(--cirrus-danger);
+  background-color: rgba(244, 67, 54, 0.05) !important;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]):not([type=range]):focus.input-error:focus,
+select:focus.input-error:focus,
+textarea:focus.input-error:focus,
+textarea[type=text]:focus.input-error:focus,
+input[type=text].input-focused.input-error:focus,
+.input-focused.input-error:focus {
+  box-shadow: 0 0 0 0.2rem rgba(251, 65, 67, 0.55), inset 0px 1px 8px rgba(0, 0, 0, 0.07);
+}
+
+select {
+  width: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 3px;
+  font-family: "Nunito Sans";
+  font-size: var(--font-size-m);
+  letter-spacing: 0.02rem;
+  transition: all 0.3s;
+  outline: none;
+  padding: 0.85rem 1.1rem;
+  z-index: 1;
+  /* Input Field Sizes */
+  /* Hold Font Awesome glyphs inside input fields */
+  /* More sizes coming soon */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  /* Fixes for Safari and other browsers for consistent UI */
+  /* Select sizes */
+}
+select.input-xsmall,
+select select.input-xsmall {
+  font-size: var(--font-size-xs);
+  padding: 0.35rem 0.9rem;
+}
+select.input-small,
+select select.input-small {
+  font-size: var(--font-size-s);
+  padding: 0.55rem 1rem;
+}
+select.input-large,
+select select.input-large {
+  font-size: var(--font-size-l);
+}
+select.input-xlarge,
+select select.input-xlarge {
+  font-size: var(--font-size-xl);
+}
+select.input-contains-icon, select.input-contains-icon-left {
+  padding-left: 2.75rem;
+}
+select.input-contains-icon-right {
+  padding-right: 2.75rem;
+}
+select.input-contains-icon.input-xsmall, select.input-contains-icon-right.input-xsmall {
+  padding-left: 2rem;
+}
+select.input-contains-icon.input-xsmall ~ .icon, select.input-contains-icon-left.input-xsmall ~ .icon, select.input-contains-icon-right.input-xsmall ~ .icon.icon-right {
+  line-height: 1.75rem;
+  width: 1.75rem;
+  font-size: 7px;
+}
+select.input-contains-icon.input-small, select.input-contains-icon-right.input-small {
+  padding-left: 2.5rem;
+}
+select.input-contains-icon.input-small ~ .icon, select.input-contains-icon-left.input-small ~ .icon, select.input-contains-icon-right.input-small ~ .icon.icon-right {
+  width: 2.5rem;
+  font-size: 14px;
+}
+select.input-contains-icon.input-large, select.input-contains-icon-right.input-large {
+  padding-left: 3.5rem;
+}
+select.input-contains-icon.input-large ~ .icon, select.input-contains-icon-left.input-large ~ .icon, select.input-contains-icon-right.input-large ~ .icon.icon-right {
+  line-height: 3.5rem;
+  width: 3.5rem;
+  font-size: 28px;
+}
+select.input-contains-icon.input-xlarge, select.input-contains-icon-right.input-xlarge {
+  padding-left: 4rem;
+}
+select.input-contains-icon.input-xlarge ~ .icon, select.input-contains-icon-left.input-xlarge ~ .icon, select.input-contains-icon-right.input-xlarge ~ .icon.icon-right {
+  line-height: 2.5rem;
+  width: 3.75rem;
+  font-size: 35px;
+}
+select[multiple] option {
+  padding: 0.2rem 0.4rem;
+}
+select.select:not([size]):not([multiple]) {
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%23667189'%20d='M2%200L0%202h4zm0%205L0%203h4z'/%3E%3C/svg%3E") no-repeat right 0.85rem center/0.5rem 0.6rem no-repeat;
+  -webkit-appearance: none;
+}
+select.input-xsmall {
+  padding: 0.65rem 0.9rem;
+}
+select.input-small {
+  padding: 0.75rem 1rem;
+}
+select.input-large {
+  padding: 0.95rem 1.2rem;
+}
+select.input-xlarge {
+  padding: 1.05rem 1.3rem;
+}
+
+input:not([class*=btn-]):disabled,
+input:not([class*=" btn-"]):disabled:hover,
+select:disabled,
+textarea:disabled {
+  background-color: #f1f3f5;
+  cursor: not-allowed;
+  border: 1px solid #f1f3f5;
+}
+
+label.label {
+  color: #495057;
+  display: inline-block;
+  /* changed from block */
+  font-weight: bold;
+  margin-top: 0.8rem;
+}
+label.label:not(:last-child) {
+  margin-bottom: 0;
+}
+label:first-child:not(:last-child):not(.form-group-label) {
+  margin-right: 0.5rem;
+}
+label:not(:first-child):not(:last-child):not(.form-group-label) {
+  margin: 0 0.5rem;
+}
+label:last-child:not(:first-child):not(.form-group-label) {
+  margin-left: 0.5rem;
+}
+
+/* Required asterisk */
+.required {
+  /* Use this in a span or a div */
+  position: relative;
+  top: 1px;
+  font-weight: bold;
+  color: #B31E1D;
+  padding-left: 0.1rem;
+}
+
+/* Used for when the input controls have another control adjacent to it but we want to position it inside the input field like font-awesome glyphs. As of 0.5.2, it is the default container for input fields. */
+.input-control {
+  position: relative;
+  margin: 0.5rem 0;
+}
+
+.input-contains-icon ~ .icon,
+.input-contains-icon-left ~ .icon,
+.input-contains-icon-right ~ .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.input-contains-icon ~ .icon:not(.icon-right),
+.input-contains-icon-left ~ .icon.icon-left {
+  /* Nomral input only */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3rem;
+  z-index: 1;
+}
+
+.input-contains-icon-right ~ .icon.icon-right {
+  position: absolute;
+  pointer-events: none;
+  line-height: 2.75rem;
+  vertical-align: baseline;
+  top: 0;
+  right: 0;
+  width: 3rem;
+  z-index: 1;
+}
+
+/* Form section just adds extra spacing between form elements tiled vertically */
+/* Form groups that group inputs with other controls. */
+.form-group {
+  /* This is just an extended portion of an input which is just like a label and is read only */
+  /* This will style the controls if they are the leftmost control in the form group for labels, inputs, and buttons. */
+  display: flex;
+  display: -ms-flexbox;
+  margin: 0.5rem 0;
+  /* Add margin to the container since they have been removed from children */
+  /* Fixes the text width being cut off */
+  /* Form group controls */
+  /* Keeps inputs in form group above other components */
+}
+.form-group .form-group-btn {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  margin-bottom: 0;
+  /* Style the front controls */
+  /* Style the middle controls */
+  /* Handles right most control in form group */
+}
+.form-group .form-group-btn:first-child:not(:last-child) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.form-group .form-group-btn:not(:first-child):not(:last-child) {
+  border-radius: 0 !important;
+  margin-left: -0.1rem;
+  margin-right: -0.1rem;
+  /* Remove spacing in middle controls */
+}
+.form-group .form-group-btn:last-child:not(:first-child) {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  margin-left: -1px;
+  z-index: 0;
+}
+.form-group .form-group-label {
+  background-color: var(--color-form-group-bg);
+  border: 1px solid #dee2e6;
+  border-radius: 0.2rem;
+  color: var(--color-form-group-fg);
+  margin: 0;
+  padding: 0.8rem;
+  user-select: none;
+  z-index: 1;
+  /* Style the front controls */
+  /* Style the middle controls */
+  /* Handles right most control in form group */
+}
+.form-group .form-group-label:first-child:not(:last-child) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.form-group .form-group-label:not(:first-child):not(:last-child) {
+  border-radius: 0 !important;
+  margin-left: -0.1rem;
+  margin-right: -0.1rem;
+  /* Remove spacing in middle controls */
+}
+.form-group .form-group-label:last-child:not(:first-child) {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  margin-left: -1px;
+  z-index: 0;
+}
+.form-group .form-group-label.label-xsmall {
+  font-size: 0.55rem;
+  padding: 0.5rem 0.9rem;
+}
+.form-group .form-group-label.label-small {
+  font-size: 0.75rem;
+  padding: 0.55rem 1rem;
+}
+.form-group .form-group-label.label-large {
+  font-size: 1.5rem;
+}
+.form-group .form-group-label.label-xlarge {
+  font-size: 2rem;
+}
+.form-group .form-group-input {
+  /* Style the front controls */
+  /* Style the middle controls */
+  /* Handles right most control in form group */
+}
+.form-group .form-group-input:first-child:not(:last-child) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.form-group .form-group-input:not(:first-child):not(:last-child) {
+  border-radius: 0 !important;
+  margin-left: -0.1rem;
+  margin-right: -0.1rem;
+  /* Remove spacing in middle controls */
+}
+.form-group .form-group-input:last-child:not(:first-child) {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  margin-left: -1px;
+  z-index: 0;
+}
+
+/* Change place holder color */
+::-moz-placeholder {
+  color: #a9a9a9;
+  /* Lighter than the default */
+}
+
+::-webkit-input-placeholder {
+  color: #a9a9a9;
+  /* Lighter than the default */
+}
+
+/*# sourceMappingURL=forms.css.map */

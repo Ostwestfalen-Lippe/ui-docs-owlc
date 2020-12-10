@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OWL.Presentation.SharedLib</name>
+    </assembly>
+    <members>
+        <member name="P:OWL.Presentation.SharedLib.Models.EventSearchRequest.Offset">
+            <summary>
+            Starting position from which the elements are returned. It has to be > 0 and can be Max.Int(C#).
+            </summary>
+            <value>0..Max</value>
+        </member>
+        <member name="P:OWL.Presentation.SharedLib.Models.EventSearchRequest.Size">
+            <summary>
+            Maximum number of elements that shall be returned.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OWL.Presentation.SharedLib.Models.EventSearchRequest.SearchText">
+            <summary>
+            Text for search in specific fields.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OWL.Presentation.SharedLib.Models.EventSearchRequest.TransportMode">
+            <summary>
+            Transport mode that shall be used for travel time filtering.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OWL.Presentation.SharedLib.Models.EventSearchRequest.TransportTimeLimit">
+            <summary>
+            Time limit that shall be used for travel time filtering.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OWL.Presentation.SharedLib.Models.EventSearchRequest.Latitude">
+            <summary>
+            Latitude that shall be used for travel time filtering.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OWL.Presentation.SharedLib.Models.EventSearchRequest.Longitude">
+            <summary>
+            Longitude that shall be used for travel time filtering.
+            </summary>
+            <value></value>
+        </member>
+    </members>
+</doc>

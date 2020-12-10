@@ -1,0 +1,46 @@
+/* A collection of modifiers that extend control styling */
+.btn.btn--pilled,
+[class^="btn-"].btn--pilled,
+[class*=" btn-"].btn--pilled {
+    border-radius: 6.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.btn.btn--circle,
+[class^="btn-"].btn--circle,
+[class*=" btn-"].btn--circle {
+    border-radius: 100%;
+    height: 3.125rem;
+    line-height: 3.125rem;
+    padding: 0;
+    width: 3.125rem;
+}
+
+/* Input (primary text-based) controls apply to inputs */
+.input-control--pilled {
+    border-radius: 6.25rem !important;
+}
+
+/* Theme modifiers */
+
+/* GLOBAL THEME SELECTORS */
+.bg-primary { background-color: var(--color-primary) !important; }
+.bg-success { background-color: var(--color-success) !important; }
+.bg-warning { background-color: var(--color-warning) !important; }
+.bg-danger { background-color: var(--color-danger) !important; }
+.bg-light { background-color: var(--color-light) !important; }
+.bg-dark { background-color: var(--color-dark) !important; }
+.bg-link { background-color: var(--color-link) !important; }
+.bg-link-dark { background-color: var(--color-link-dark) !important; }
+.bg-info { background-color: var(--color-info) !important; }
+
+.text-primary { color: var(--color-primary) !important; }
+.text-success { color: var(--color-success) !important; }
+.text-warning { color: var(--color-warning) !important; }
+.text-danger { color: var(--color-danger) !important; }
+.text-light { color: var(--color-light) !important; }
+.text-dark { color: var(--color-dark) !important; }
+.text-link { color: var(--color-link) !important; }
+.text-link-dark { color: var(--color-link-dark) !important; }
+.text-info { color: var(--color-info) !important; }

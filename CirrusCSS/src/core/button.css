@@ -1,0 +1,405 @@
+/* BUTTONS */
+
+/* Button styling */
+/* Un-themed */
+button,
+.btn,
+[type="submit"] {
+    display: block;
+    line-height: 2rem;
+    overflow: hidden;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all var(--animation-duration);
+    background-color: #fefefe;
+    border-color: #d9d9d9;
+    color: #737373;
+    font-size: 0.75rem;
+    letter-spacing: 0.03rem;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    min-width: 2rem;
+    user-select: none;
+    margin-bottom: 1rem;
+    outline: none;
+    --btn-color: #fefefe;
+    --btn-fg: #737373;
+    --btn-border-color: #d9d9d9;
+}
+
+button:hover,
+.btn:hover,
+[type="submit"]:hover {
+    transition: all var(--animation-duration);
+}
+
+.btn:active,
+button:active,
+[type="submit"]:active {
+    transition: var(--animation-duration) ease;
+}
+
+/* Default button colors */
+button:hover,
+.btn:hover,
+[type="submit"]:hover {
+    background-color: #eee;
+    --btn-color: #eee;
+}
+
+/* Make the loading circle, if present, white when button is active */
+.btn.loading:active::after,
+button.loading:active::after,
+[type="submit"].loading:active::after {
+    transition: var(--animation-duration) ease;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+button.btn-animated,
+[type="submit"].btn-animated,
+.btn.btn-animated {
+    transition: calc(var(--animation-duration) / 2) ease;
+}
+
+button.btn-animated:active,
+[type="submit"].btn-animated:active,
+.btn.btn-animated:active {
+    -webkit-transform: scale(0.98);
+    transform: inherit, scale(0.98);
+    transition: calc(var(--animation-duration) / 2) ease;
+}
+
+.btn:focus,
+button:focus,
+input[type="submit"]:focus {
+    outline: none;
+}
+
+.btn:disabled,
+button:disabled,
+[type="submit"]:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+button.btn-close {
+    background-color: rgba(10, 10, 10, 0.2);
+    border: none;
+    border-radius: 290486px;
+    cursor: pointer;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 0;
+    height: 20px;
+    outline: 0;
+    position: relative;
+    vertical-align: top;
+    width: 20px;
+    padding: 0;
+    min-width: 20px;
+}
+
+button.btn-close:hover {
+    background-color: rgba(10, 10, 10, 0.3);
+}
+
+/* Render the x in the close button */
+button.btn-close::before,
+button.btn-close::after {
+    background-color: var(--color-bg);
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+}
+
+button.btn-close::before {
+    height: 2px;
+    width: 50%;
+}
+
+button.btn-close::after {
+    height: 50%;
+    width: 2px;
+}
+
+/* Adds small margin around buttons */
+.btn-container {
+    margin: 0.5rem;
+    overflow: visible;
+}
+
+/* BUTTON STYLES */
+/* Regular */
+.btn-transparent {
+    --btn-color: transparent;
+    --btn-fg: var(--color-dark);
+    --btn-border-color: transparent;
+}
+.btn-transparent.outline { --btn-color: var(--color-dark); }
+.btn-transparent:hover { --btn-color: rgba(0, 0, 0, .1); }
+.btn-transparent:focus { box-shadow: 0 0 0 0.2rem rgba(246, 249, 252, 0.5); }
+
+.btn-light {
+    --btn-color: var(--color-light);
+    --btn-fg: var(--color-dark);
+    --btn-border-color: var(--color-light);
+}
+.btn-light:hover { --btn-color: var(--color-light-hover); }
+.btn-light:focus { box-shadow: 0 0 0 0.2rem rgba(246, 249, 252, 0.5); }
+
+.btn-dark {
+    --btn-color: var(--color-dark);
+    --btn-fg: var(--color-light);
+    --btn-border-color: var(--color-dark);
+}
+.btn-dark:hover { --btn-color: var(--color-dark-hover); }
+.btn-dark.outline:hover { --btn-color: var(--color-dark); }
+.btn-dark:focus { box-shadow: 0 0 0 0.2rem rgba(54, 54, 54, 0.5); }
+
+.btn-black {
+    --btn-color: #000;
+    --btn-fg: var(--color-light);
+    --btn-border-color: #000;
+}
+.btn-black:hover { --btn-color: #000; }
+.btn-black:focus { box-shadow: 0 0 0 0.2rem rgba(54, 54, 54, 0.5); }
+
+.btn-primary {
+    --btn-color: var(--color-primary);
+    --btn-fg: var(--color-light);
+    --btn-border-color: var(--color-accent-border);
+}
+.btn-primary:hover { --btn-color: var(--color-accent-hover); }
+.btn-primary.outline:hover { --btn-color: var(--color-primary); }
+.btn-primary:focus { box-shadow: 0 0 0 0.2rem rgba(240, 61, 76, 0.5); }
+
+.btn-info {
+    --btn-color: var(--color-info);
+    --btn-fg: var(--color-light);
+    --btn-border-color: var(--color-info);
+}
+.btn-info:hover { --btn-color: var(--color-info-hover); }
+.btn-info.outline:hover { --btn-color: var(--color-info); }
+.btn-info:focus { box-shadow: 0 0 0 0.2rem rgba(41, 114, 250, 0.5); }
+
+.btn-link {
+    --btn-color: var(--color-link);
+    --btn-fg: var(--color-light);
+    --btn-border-color: var(--color-link);
+}
+.btn-link.outline { --btn-fg: var(--color-link); border: 1px solid transparent; }
+.btn-link:hover { --btn-color: var(--color-link-dark); }
+.btn-link.outline:hover { --btn-color: var(--color-link-hover); border: 1px solid transparent; text-decoration: underline; }
+.btn-link:focus { box-shadow: 0 0 0 0.2rem rgba(94, 92, 199, 0.5); }
+
+.btn-success {
+    --btn-color: var(--color-success);
+    --btn-fg: var(--color-light);
+    --btn-border-color: var(--color-success);
+}
+.btn-success:hover { --btn-color: var(--color-success-hover); }
+.btn-success.outline:hover { --btn-color: var(--color-success); }
+.btn-success:focus { box-shadow: 0 0 0 0.2rem rgba(13, 210, 89, 0.5); }
+
+.btn-warning {
+    --btn-color: var(--color-warning);
+    --btn-fg: var(--color-dark);
+    --btn-border-color: var(--color-warning);
+}
+.btn-warning:hover { --btn-color: var(--color-warning-hover); }
+.btn-warning.outline:hover { --btn-color: var(--color-warning); }
+.btn-warning:focus { box-shadow: 0 0 0 0.2rem rgba(250, 180, 51, 0.5); }
+
+.btn-danger {
+    --btn-color: var(--color-danger);
+    --btn-fg: var(--color-light);
+    --btn-border-color: var(--color-danger);
+}
+.btn-danger:hover { --btn-color: var(--color-danger-hover); }
+.btn-danger.outline:hover { --btn-color: var(--color-danger); }
+.btn-danger:focus { box-shadow: 0 0 0 0.2rem rgba(251, 65, 68, 0.5); }
+
+[class^="btn-"], [class*=" btn-"] {
+    background-color: var(--btn-color); 
+    border: 1px solid var(--btn-border-color);
+    color: var(--btn-fg);
+    transition: all var(--animation-duration);
+}
+
+[class^="btn-"]:hover, [class*=" btn-"]:hover { background-color: var(--btn-color); border-color: var(--btn-border-color); transition: all var(--animation-duration); }
+
+/* Outline Variants */
+[class^="btn-"].outline, [class*=" btn-"].outline {
+    background-color: transparent; 
+    color: var(--btn-color);
+}
+[class^="btn-"].outline:hover, [class*=" btn-"].outline:hover {
+    background-color: var(--btn-color);
+    color: var(--btn-fg);
+    transition: all var(--animation-duration);
+}
+
+/* Right of input */
+.has-controls.input:not([class*="left action"]) > button:last-child,
+.has-controls.input:not([class*="left action"]) > .btn:last-child > .btn {
+    border-radius: 0 0.28571429rem 0.28571429rem 0;
+}
+
+.has-controls.input:not([class*="right action"]) > button:last-child,
+.has-controls.input:not([class*="right action"]) > .btn:last-child > .btn {
+    border-radius: 0.28571429rem 0 0 0.28571429rem;
+}
+
+/* Tiny button */
+.btn-tiny {
+    line-height: 1.5rem;
+    padding: 0 0.25rem;
+    font-size: 50%;
+}
+
+/* Small button */
+.btn-small {
+    line-height: 2.4rem;
+    padding: 0 0.5rem;
+    font-size: 70%;
+}
+
+/* Big button */
+.btn-large {
+    line-height: 3.5rem;
+    padding: 0 2rem;
+    font-size: 90%;
+}
+
+.btn-xlarge {
+    line-height: 4.5rem;
+    padding: 0 2rem;
+    font-size: 110%;
+}
+
+/* Make the loader white so it is visible */
+.loading.btn-accent:after {
+    border: 2px solid #fff;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+/* Override default behavior of aligning font awesome icons to the top */
+button .fa-wrapper,
+.btn .fa-wrapper,
+[type="submit"] .fa-wrapper {
+    vertical-align: baseline;
+}
+
+button .fa-wrapper.pad-right,
+.btn .fa-wrapper.pad-right,
+[type="submit"] .fa-wrapper.pad-right {
+    margin-right: 0.4rem;
+}
+
+button .fa-wrapper.pad-left,
+.btn .fa-wrapper.pad-left,
+[type="submit"] .fa-wrapper.pad-left {
+    margin-left: 0.4rem;
+}
+
+/* Alternatives to pad-left and pad-right */
+button span:first-child,
+.btn span:first-child,
+[type="submit"] span:first-child {
+    margin-right: 0.2rem;
+}
+
+button span:last-child,
+.btn span:last-child,
+[type="submit"] span:last-child {
+    margin-left: 0.2rem;
+}
+/* Deprecated 0.5.5
+/* Button with accent 
+.btn-accent {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-accent-border);
+}
+
+.btn-accent:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.btn-accent:active {
+    background-color: var(--color-accent-border);
+} */
+
+/* BUTTON GROUPS */
+/* Will group buttons with components in a single component */
+
+.btn-group {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; /* Wrap contents to next row on overflow */
+    display: -webkit-inline-box;
+    display: inline-flex;
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+}
+
+.btn-group.btn-group-fill {
+    /* Makes the button group fill the width and proportion the buttons to fill the space */
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+}
+
+.btn-group .btn,
+.btn-group button,
+.btn-group [type="submit"] {
+    -ms-flex: 1 0 auto;
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    margin: 0;
+}
+
+.btn-group.btn-group-fill .btn,
+.btn-group.btn-group-fill button,
+.btn-group.btn-group-fill [type="submit"] {
+    -ms-flex: 1 0 0;
+    -webkit-box-flex: 1;
+    flex: 1 0 0; /* Make the buttons fill the available width and proportion themselves */
+}
+
+.btn-group .btn:first-child:not(:last-child),
+.btn-group button:first-child:not(:last-child),
+.btn-group [type="submit"]:first-child:not(:last-child) {
+    /* Style the first child in group > 1 buttons */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-group .btn:last-child:not(:first-child),
+.btn-group button:last-child:not(:first-child),
+.btn-group [type="submit"]:last-child:not(:first-child) {
+    /* Style the last child in group > 1 buttons */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -0.1rem;
+}
+
+.btn-group .btn:not(:first-child):not(:last-child),
+.btn-group button:not(:first-child):not(:last-child),
+.btn-group [type="submit"]:not(:first-child):not(:last-child) {
+    /* Style button in middle of group */
+    border-radius: 0; /* Remove roundness from center buttons */
+    margin-left: -0.1rem;
+}

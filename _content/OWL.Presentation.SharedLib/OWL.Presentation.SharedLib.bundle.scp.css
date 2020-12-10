@@ -1,0 +1,85 @@
+@import '';
+
+/* _content/OWL.Presentation.SharedLib/FilteringMenu.razor.rz.scp.css */
+.traveltime-firstrow[b-or98iengj0] {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.traveltime-firstrow .form-ext-control[b-or98iengj0] {
+    margin-right:1rem;
+    padding-left: 0.5rem;
+}
+
+.vertical-upright-selection[b-or98iengj0] {
+    /* padding-left: 1.5rem; */
+    padding-top:  0.75rem;
+    /* color: var(--color-primary); */
+    display: flex;
+    flex-flow: row nowrap;
+}
+.vertical-upright-selection .form-ext-label[b-or98iengj0] {
+    /* writing-mode: vertical-rl;
+    text-orientation: upright; */
+    margin-top: 1.5rem;
+    padding:0;
+    width: 1.8rem;
+    text-align: center;
+    font-size: 0.875rem;
+
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+.vertical-upright-selection .form-ext-control .form-ext-input:checked ~ .form-ext-label[b-or98iengj0] {
+    color: var(--color-primary);
+    font-weight: 700;
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+}
+
+.vertical-upright-selection .form-ext-control.form-ext-radio[b-or98iengj0]{
+    padding-left:0rem;
+}
+
+.vertical-upright-selection .form-ext-label[b-or98iengj0]:before,
+.vertical-upright-selection .form-ext-label[b-or98iengj0]:after {
+    left: .3rem;
+    top: -1.5rem;
+}
+
+/* Hides the original input */
+.form-ext-input[b-or98iengj0] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.traveltime-leaflet[b-or98iengj0] {
+    width:20rem;
+    height:20rem;
+}
+
+/* .testBody{
+    background-color: yellowgreen;
+} */
+
+/* .form-ext-label:before {
+    background-color: transparent;
+} */
+
+/* .icon svg {
+    color: transparent;
+    background-color: var(--color-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.radio-tile input[type="radio"]:checked+label .icon svg {
+    background-color: var(--color-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}  */

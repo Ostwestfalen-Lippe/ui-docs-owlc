@@ -1,0 +1,514 @@
+/*
+  Functions
+*/
+/*
+    Converts a given hex value to RGB.
+*/
+/* Spacing */
+/* Fonts */
+/* Grid Count */
+/* Grid Percents */
+/* Tab Sizes */
+/* Media Queries */
+/* Smaller than the defined pixels are the dimensions for that range */
+/* Color scheme for Cirrus */
+/* v2 Colors */
+:root {
+  /* v1 Colors */
+  --cirrus-fg: #374054;
+  --cirrus-bg: #fff;
+  --cirrus-primary: #f03d4d;
+  --cirrus-primary-rgb: 240, 61, 77;
+  --cirrus-primary-light: #ffdadd;
+  --cirrus-accent-hover: #d62939;
+  --cirrus-accent-border: #c21b2b;
+  --cirrus-light: #f6f9fc;
+  --cirrus-light-gray: #f8f9fa;
+  --cirrus-gray: #d5d7dc;
+  --cirrus-dark-gray: #909090;
+  --cirrus-dark: #363636;
+  --cirrus-link: #5e5cc7;
+  --cirrus-link-dark: #4643e2;
+  --cirrus-info: #2972fa;
+  --cirrus-success: #0dd157;
+  --cirrus-success-rgb: 13, 209, 87;
+  --cirrus-warning: #fab633;
+  --cirrus-danger: #fb4143;
+  --cirrus-light-hover: #d0e0ef;
+  --cirrus-dark-hover: #505050;
+  --cirrus-info-hover: #1062f9;
+  --cirrus-link-hover: #f8f7ff;
+  --cirrus-success-hover: #0cb94d;
+  --cirrus-warning-hover: #f9ad1a;
+  --cirrus-danger-hover: #eb0507;
+  --cirrus-select-bg: rgba(0, 161, 255, 0.2);
+  --cirrus-code-bg: var(--cirrus-primary-light);
+  --cirrus-code-fg: #dc4753;
+  --cirrus-form-group-bg: var(--cirrus-light-gray);
+  --cirrus-form-group-fg: var(--cirrus-dark-gray);
+  --toast-primary-bg: rgba(49, 59, 80, 0.9);
+  /* Self defined Colors */
+  /* Background and Foreground Colors */
+  --color-bg-h: 0;
+  --color-bg-s: 0%;
+  --color-bg-l: 100%;
+  --color-bg: hsl(var(--color-bg-h),var(--color-bg-s),var(--color-bg-l));
+  --color-fg-h: 221;
+  --color-fg-s: 21%;
+  --color-fg-l: 27%;
+  --color-fg: hsl(var(--color-fg-h),var(--color-fg-s),var(--color-fg-l));
+  /* Basic Colors */
+  --color-primary-h:355;
+  --color-primary-s:86%;
+  --color-primary-l:59%;
+  --color-primary: hsl(var(--color-primary-h),var(--color-primary-s),var(--color-primary-l));
+  --color-primary-light: hsl(var(--color-primary-h),var(--color-primary-s),calc(var(--color-primary-l) + 20%));
+  --color-light-h: 210;
+  --color-light-s: 50%;
+  --color-light-l: 98%;
+  --color-light: hsl(var(--color-light-h),var(--color-light-s),var(--color-light-l));
+  --color-light-gray: hsl(var(--color-light-h),calc(var(--color-light-s) - 33%),var(--color-light-l));
+  --color-gray-h: 223;
+  --color-gray-s: 9%;
+  --color-gray-l: 85%;
+  --color-gray: hsl(var(--color-gray-h),var(--color-gray-s),var(--color-gray-l));
+  --color-dark-h: 0;
+  --color-dark-s: 0%;
+  --color-dark-l: 21%;
+  --color-dark: hsl(var(--color-dark-h),var(--color-dark-s),var(--color-dark-l));
+  --color-dark-gray: hsl(var(--color-dark-h),var(--color-dark-s),calc(var(--color-dark-l) + 35%));
+  --color-info-h: 219;
+  --color-info-s: 95%;
+  --color-info-l: 57%;
+  --color-info: hsl(var(--color-info-h),var(--color-info-s),var(--color-info-l));
+  --color-link-h: 241;
+  --color-link-s: 49%;
+  --color-link-l: 57%;
+  --color-link: hsl(var(--color-link-h),var(--color-link-s),var(--color-link-l));
+  --color-link-dark: hsl(var(--color-link-h),calc(var(--color-link-s) + 24%),var(--color-link-l));
+  --color-success-h: 144;
+  --color-success-s: 88%;
+  --color-success-l: 44%;
+  --color-success: hsl(var(--color-success-h),var(--color-success-s),var(--color-success-l));
+  --color-warning-h: 39;
+  --color-warning-s: 95%;
+  --color-warning-l: 59%;
+  --color-warning: hsl(var(--color-warning-h),var(--color-warning-s),var(--color-warning-l));
+  --color-danger-h: 359;
+  --color-danger-s: 96%;
+  --color-danger-l: 62%;
+  --color-danger: hsl(var(--color-danger-h),var(--color-danger-s),var(--color-danger-l));
+  /* Hover Colors */
+  --color-accent-hover: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 18%),calc(var(--color-primary-l) - 8%));
+  --color-accent-border: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 10%),calc(var(--color-primary-l) - 16%));
+  --color-light-hover: hsl(var(--color-light-h),var(--color-light-s),calc(var(--color-light-l) - 10%));
+  --color-dark-hover: hsl(var(--color-dark-h),var(--color-dark-s),calc(var(--color-dark-l) + 10%));
+  --color-info-hover: hsl(var(--color-info-h:),var(--color-info-s),calc(var(--color-info-l) - 5%));
+  --color-link-hover: hsl(var(--color-link-h),var(--color-link-s),calc(var(--color-link-l) + 40%));
+  --color-success-hover: hsl(var(--color-success-h),var(--color-success-s),calc(var(--color-success-l) - 5%));
+  --color-warning-hover: hsl(var(--color-warning-h),var(--color-warning-s),calc(var(--color-warning-l)- 5%));
+  --color-danger-hover: hsl(var(--color-danger-h),var(--color-danger-s),calc(var(--color-danger-l) - 15%));
+  /*  Additional Colors */
+  --color-select-bg: hsla(202,101%,50%,20%);
+  --color-code-bg: var(--color-primary-light);
+  --color-code-fg: hsl(var(--color-primary-h),calc(var(--color-primary-s) - 20%),var(--color-primary-l));
+  --color-form-group-bg: var(--color-light-gray);
+  --color-form-group-fg: var(--color-dark-gray);
+  --toast-primary-bg: hsla(var(--color-fg-h),var(--color-fg-s),var(--color-fg-l),90%);
+  --animation-duration: 0.2s;
+  --focus-opacity: 0.55;
+  --space-size: 0.5rem;
+  --font-size-xs: 0.7rem;
+  --font-size-s: 0.85rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.35rem;
+  --font-size-xl: 1.75rem;
+}
+
+/* Spacing */
+/* Fonts */
+/* Grid Count */
+/* Grid Percents */
+/* Tab Sizes */
+/* Media Queries */
+/* Smaller than the defined pixels are the dimensions for that range */
+/* LISTS */
+ul,
+ol {
+  margin: 1rem 0 1rem 1rem;
+  padding-inline-start: 0.5rem;
+  /* Handle nesting */
+}
+ul ul, ul ol,
+ol ul,
+ol ol {
+  margin: 0 0 0 1rem;
+}
+
+ul {
+  list-style: disc;
+  /* Nested list bullet types */
+}
+ul ul {
+  list-style-type: circle;
+}
+ul ul ul {
+  list-style-type: square;
+}
+
+ol ol {
+  list-style: lower-alpha;
+}
+
+ol ol ol {
+  list-style: upper-roman;
+}
+
+/* Description lists */
+dl {
+  margin: 1rem 0;
+}
+
+/* Detail title */
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
+/* MISC */
+ul {
+  /* MENU LISTS */
+  /* Style headers to have even space distribution. */
+  /* Style menu items */
+  /* Style sub menus inside a menu */
+  /* Menu item divider */
+  /* Title for the section separated by the divider */
+}
+ul.no-bullets {
+  list-style: none;
+}
+ul.menu {
+  font-size: 1rem;
+  list-style: none;
+  margin: 0.5rem 0;
+}
+ul .menu-title:not(:first-child) {
+  margin-bottom: 1rem;
+}
+ul .menu-title:not(:last-child) {
+  margin-top: 1rem;
+}
+ul .menu-item a {
+  color: #495057;
+  display: block;
+  padding: 0.5em 0.75em;
+  border-radius: 3px;
+  font-size: var(--font-size-s);
+  cursor: pointer;
+  -webkit-transition: all var(--animation-duration);
+  transition: all var(--animation-duration);
+}
+ul .menu-item:hover > a {
+  background-color: rgba(208, 208, 208, 0.3);
+  color: var(--color-primary);
+  -webkit-transition: all var(--animation-duration);
+  transition: all var(--animation-duration);
+}
+ul .menu-item.selected > a {
+  color: #fff;
+  background-color: var(--color-primary);
+}
+ul .menu-item .menu-addon {
+  padding: 0.3rem;
+  z-index: 1;
+  position: relative;
+  color: var(--color-fg);
+  cursor: pointer;
+  float: left;
+  margin-right: 0.1rem;
+  -webkit-transition: all var(--animation-duration);
+  transition: all var(--animation-duration);
+}
+ul .menu-item .menu-addon .icon {
+  font-size: inherit;
+  vertical-align: auto;
+}
+ul .menu-item .menu-addon:hover {
+  -webkit-transition: all var(--animation-duration);
+  transition: all var(--animation-duration);
+}
+ul .menu-item .menu-addon.right {
+  float: right;
+  margin-right: 0;
+  margin-left: 0.1rem;
+}
+ul .menu-item.selected .menu-addon {
+  color: #fff;
+}
+ul .menu-item ul {
+  border-left: 1px solid #dee2e6;
+  margin: 0.75rem;
+  padding-left: 0.75rem;
+}
+ul li.menu-item:last-child {
+  margin-bottom: 0;
+}
+ul .divider {
+  border-top: 0.1rem solid #e9ecef;
+  height: 0.1rem;
+  margin: 1rem 0;
+}
+ul .divider::after {
+  content: attr(data-label);
+  /* Text that will be displayed */
+  background-color: var(--color-bg);
+  color: #adb5bd;
+  display: inline-block;
+  padding: 0 0.7rem;
+  margin: 0.5rem;
+  font-size: 0.7rem;
+  -webkit-transform: translateY(-1.1rem);
+  transform: translateY(-1.1rem);
+}
+
+/* Dropdown menu for dropdown buttons */
+.list-dropdown {
+  display: inline-block;
+  position: relative;
+  /* Allow for shown and :focus selectors for JS and native CSS transitions */
+}
+.list-dropdown .menu {
+  position: absolute;
+  top: 75%;
+  left: 0;
+  -webkit-animation: slide-down var(--animation-duration) ease 1;
+  animation: slide-down 0.1s ease 1;
+  background-color: var(--color-bg);
+  border-radius: 0.2rem;
+  box-shadow: 0 1rem 3rem rgba(149, 157, 165, 0.3);
+  margin: 0;
+  opacity: 0;
+  min-width: 15rem;
+  padding: 0.25rem 0.5rem;
+  -webkit-transform: translateY(0.5rem);
+  transform: translateY(0.5rem);
+  z-index: 10;
+  pointer-events: none;
+  /* Remove pointer events to prevent mouse hover to show menu even though it is not visible */
+  overflow: hidden;
+  -webkit-transition: all var(--animation-duration);
+  transition: all var(--animation-duration);
+}
+@media screen and (max-width: 767px) {
+  .list-dropdown .menu {
+    height: 0;
+    padding: 0 !important;
+    position: relative;
+  }
+}
+.list-dropdown.dropdown-right .menu {
+  left: auto;
+  right: 0;
+}
+.list-dropdown.shown .menu,
+.list-dropdown .btn-dropdown:focus + .menu,
+.list-dropdown .menu:hover {
+  display: block;
+  opacity: 1;
+  top: 100%;
+  z-index: 100;
+  pointer-events: auto;
+  /* Restore pointer events */
+  height: auto;
+  -webkit-transition: all var(--animation-duration);
+  transition: all var(--animation-duration);
+}
+.list-dropdown .btn-group .btn-dropdown:nth-last-child(2) {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+/* TREE */
+/* Tree Navigation Menu */
+.tree {
+  margin: 0;
+}
+.tree .tree-item {
+  /* The title of the tree menu */
+  /* The dropdown glyph of the tree menu */
+  /* Expand the tree-item-body (has menu-items) */
+  /* Rotate the dropdown glyph */
+  /* Container for the menu-items of the tree menu */
+}
+.tree .tree-item .tree-item-header {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  /* Keep styling consistent with menu-items */
+}
+.tree .tree-item .tree-item-header .icon {
+  -webkit-transition: all var(--animation-duration);
+  transition: all var(--animation-duration);
+}
+.tree .tree-item input:checked ~ .tree-item-body {
+  max-height: 100vh;
+}
+.tree .tree-item input:checked ~ .tree-item-header .icon {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.tree .tree-item .tree-item-body {
+  max-height: 0;
+  /* Hidden at first */
+  margin-left: 1.5rem;
+  overflow: hidden;
+  -webkit-transition: all var(--animation-duration);
+  transition: all var(--animation-duration);
+}
+
+/* The body that will encompass the tree-nav and tree-nav-content */
+.tree-nav-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  /* A fixed menu on the side with a tree component */
+  /* The container for the tree component to prevent it from overflowing */
+  /* Darkened area that will close the navbar when clicked for mobile only */
+  /* Push document body further right to account for sidebar space */
+  /* The body where all other HTML components are entered if a tree-nav is used */
+}
+.tree-nav-body .tree-nav {
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  padding: 2rem 1rem 2rem 2rem;
+  min-width: 15rem;
+  height: 100vh;
+  overflow: auto;
+}
+.tree-nav-body .tree-nav-container {
+  overflow-y: auto;
+  top: 4rem;
+  bottom: 1rem;
+}
+.tree-nav-body + .tree-nav-close {
+  display: none;
+  /* Not needed in desktop */
+}
+.tree-nav-body + .tree-nav-content {
+  max-width: 100%;
+  padding: 2rem;
+  -ms-flex: 1 0 auto;
+  -webkit-box-flex: 1;
+  flex: 1 0 auto;
+  overflow: auto;
+  margin: 0;
+}
+.tree-nav-body .tree-nav-content {
+  width: 100%;
+  overflow: auto;
+  margin: 0;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  /* Hide the menu to the side by default */
+  .tree-nav {
+    height: 100%;
+    left: 0;
+    overflow-y: auto;
+    padding: 3rem 1.5rem;
+    position: fixed;
+    top: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    transition: transform var(--animation-duration) ease, -webkit-transform var(--animation-duration) ease;
+    -webkit-transition: -webkit-transform var(--animation-duration) ease;
+    transition: transform var(--animation-duration) ease;
+    transition: -webkit-transform var(--animation-duration) ease;
+    z-index: 400;
+    /* Open the menu from the side */
+    /* Use a link and add the id of this element as the url */
+    /* Create the area to click to close the menu */
+    /* Reset max-width in mobile */
+  }
+  .tree-nav:target {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    transition: transform var(--animation-duration) ease, -webkit-transform var(--animation-duration) ease;
+    -webkit-transition: -webkit-transform var(--animation-duration) ease;
+    transition: -webkit-transform var(--animation-duration) ease;
+    transition: transform var(--animation-duration) ease;
+    /* Show the darkened area when the tree nav menu is clicked */
+  }
+  .tree-nav:target + .tree-nav-close {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.15);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 300;
+  }
+  .tree-nav .tree-nav-close {
+    background-color: rgba(0, 0, 0, 0.15);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 300;
+  }
+  .tree-nav + .tree-nav-body {
+    max-width: inherit;
+  }
+
+  /* Header bar for mobile websites with the tree-nav */
+  .tree-nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(248, 249, 250, 0.8);
+    height: 3.5rem;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    z-index: 300;
+  }
+
+  /* For dropdown menu used in header (different from header dropdown) */
+  .nav-item.has-sub .list-dropdown {
+    width: 100%;
+  }
+  .nav-item.has-sub .list-dropdown .btn-group {
+    width: 100%;
+  }
+  .nav-item.has-sub .list-dropdown .btn-group .btn-dropdown {
+    flex-grow: 0;
+  }
+
+  /* Show the dropdown menu in mobile hamburger menu relative with the header menu */
+  .list-dropdown .btn-dropdown:focus + .menu {
+    position: relative;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=lists.css.map */

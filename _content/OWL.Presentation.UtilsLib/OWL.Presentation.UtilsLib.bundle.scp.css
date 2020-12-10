@@ -1,0 +1,13 @@
+@import '';
+
+/* _content/OWL.Presentation.UtilsLib/DatePicker.razor.rz.scp.css */
+input[b-viz8w7q0lr]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+input[type="date"][b-viz8w7q0lr]::-webkit-input-placeholder {
+  visibility: hidden !important;
+}
+
+form.daterange > div > label[b-viz8w7q0lr] {
+  padding: 0 0.5rem;
+}
